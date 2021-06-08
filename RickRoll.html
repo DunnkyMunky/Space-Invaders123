@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+background-color:blue;
+}
+#myVideo {
+width:700px;
+height:500px;
+}
+#myVideo:hover {
+background-color:yellow;
+}
+#h {
+position:relative;
+top:600px;
+background-color:green;
+}
+#h:hover {
+background-color:red;
+}
+#img {
+position:relative;
+left:1000px;
+
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body onload="Autoplay()">
+    <h1 id="h"> You got Rick Rolled in 2021!!</h1>
+    <img id="img" src="https://media.tenor.com/images/f0e22aca6a9498ce63497ca56fb49602/tenor.gif">
+<video id="myVideo" width="320" height="176" controls="autoplay">
+  <source src="sounds/RickRoll.mp4" type="video/mp4">
+  <source src="sounds/RickRoll.ogg" type="video/ogg">
+
+  <script>
+  var vid = document.getElementById("myVideo");
+  function Autoplay() { 
+    vid.autoplay = true;
+    vid.load();
+  } 
+
+  </script>
+
+</body>
+</html>

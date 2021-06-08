@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>spaceinvaders</title>
+ <link rel="stylesheet" href="space1.css">
+  <script src="space1.js" defer></script>
+   
+</head>
+<body id="body" onkeyup="move(event.key)" onkeydown="moveToSide(event.key)" onload="createEnemy(), createbunker()">
+
+<div id="border">
+<div id="level">LEVEL1</div>
+<div id="scoreboard">SCORE: 0</div>
+<div id="levens">Aantal levens: 3</div>
+<div id="enemycount">Resterende aliens: 1</div>
+</div>
+<div id="container">
+<div id="tudo">
+
+	<div class="gameover">
+	<p> YOU </p>
+	<p> WON! </p>
+	</div>
+
+	<div class="continue"> 
+	
+	<p id="score"></p>
+	<p id="aantalAliens"></p>
+	<p> CONTINUE? </p> </div>
+
+	<div class="opcoes">
+		<div class="yes"> <a href="#" onclick="window.location.reload(true)"> YES </a></div>
+		<div class="no"> <a href="RickRoll.html"> NO </a> </div>
+	</div>
+
+</div>
+</div>
+<div id="container1">
+<div id="tudo1">
+
+	<div class="gameover1">
+	<p> GAME </p>
+	<p> OVER! </p>
+	</div>
+
+	<div class="continue1"> 
+	
+	<p id="score1"></p>
+	<p id="aantalAliens1"></p>
+	<p> PLAY AGAIN? </p> </div>
+
+	<div class="opcoes1">
+		<div class="yes1"> <a href="#" onclick="window.location.reload(true)"> YES </a></div>
+		<div class="no1"> <a href="RickRoll.html"> NO </a> </div>
+	</div>
+
+</div>
+</div>
+<div id="char"></div>
+<div id="shotup"></div>
+</body>
+
+
+
+ </html>

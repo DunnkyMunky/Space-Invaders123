@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SpaceInveters</title>
+<style>
+html{
+  height:100%
+}
+body{
+  height:100%;
+  background: url(https://images.pond5.com/vintage-space-invaders-style-asteroid-footage-023690034_iconl.jpeg) center center no-repeat;
+  background-size:cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:sans-serif;
+  margin:0;
+  overflow:hidden
+}
+#brand{  
+  text-align:center;
+  cursor:pointer;
+}
+#brand img{
+  display:block;
+  width:80vw;
+  max-width:700px;
+  height:auto;
+  transition:0.2s
+}
+#brand a{
+  display:block;
+  font-family: 'Passion One';
+  font-size:3em;
+  color:white;
+  font-weight:800;
+  text-decoration:none;
+  background:rgba(0,0,40,0);
+  padding:5px 15px;
+  transition:0.4s
+}
+#brand:hover a{  
+  color:rgba(200,80,50,1);
+  text-shadow:2px 5px 0 rgba(0,0,0,0.6)
+}
+
+
+
+
+
+.btn-twtr{
+  color:#ddd;
+  border:2px solid;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-block;
+  padding:5px 10px;
+  font-family:sans-serif;
+  font-weight:600;
+  margin-top:80vh;
+  background:rgba(0,0,0,0.2);
+  box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
+  opacity:0.8;
+  position:absolute;
+  bottom:20px;
+  right:20px
+}.btn-twtr:hover{color:#fff;}
+.btn-twtr:after{content:"\1F426";padding-left:5px}
+#gif {
+position: relative;
+left: 550px;
+top: 5px;
+width: 250px;
+height: 250px;
+}
+</style>
+<script>
+
+let start = document.querySelector('#brand');
+let ex = 10;
+function swing(element) {
+
+    function update(time) {
+        
+        const x = Math.sin(time / 1231) * ex;
+        const y = Math.sin(time / 1458) * ex;
+
+        element.style.transform = [
+            `rotateX(${x}deg)`,
+            `rotateY(${y}deg)`
+        ].join(' ');
+
+        requestAnimationFrame(update);
+    }
+    update(0);
+}
+
+swing(start);
+
+
+let start_button = start.querySelector('a');
+let og_color = start_button.style.color;
+let inter = 0;
+
+start.addEventListener('mouseover', (e) => {
+  
+ ex = 20;  
+ inter = setInterval(()=>{  
+    start_button.style.color = '#'+Math.floor(Math.random()*16777215).toString(16); 
+  }, 1000); 
+  
+});
+
+
+start.addEventListener('mouseout', (e) => {
+  
+  ex = 10;
+  clearInterval(inter);
+  start_button.style.color = og_color; 
+  
+});
+</script>
+
+</head>
+<body>
+
+<div id="brand"><img src="image/start.png">
+  <a href="level1.html">PRESS START</a>
+</div>
+
+<footer>
+  <p align="center"><a href="#" class="btn-twtr">Gemaakt door Bram Verbeiren</a>
+  </p>
+</footer>
+</body>
+</html>
